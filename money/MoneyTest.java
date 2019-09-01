@@ -9,6 +9,8 @@ import static org.junit.jupiter.api.Assertions.*;
  * TODO: [ ] amount を privateにする
  * TODO: [x] Dollarの副作用をどうする？
  * TODO: [ ]  Moneyの丸め処理をどうする？
+ * TODO: [ ]  equals()
+ * TODO: [ ]  hashCode()
  */
 
 public class MoneyTest {
@@ -19,5 +21,10 @@ public class MoneyTest {
     assertEquals(10, product.amount);
     product = five.times(3);
     assertEquals(15, product.amount);
+  }
+
+  @Test
+  public void testEquality() {
+    assertTrue(new Dollar(5).equals(new Dollar(5)));
   }
 }
