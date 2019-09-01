@@ -9,8 +9,10 @@ import static org.junit.jupiter.api.Assertions.*;
  * TODO: [ ] amount を privateにする
  * TODO: [x] Dollarの副作用をどうする？
  * TODO: [ ]  Moneyの丸め処理をどうする？
- * TODO: [ ]  equals()
+ * TODO: [x]  equals()
  * TODO: [ ]  hashCode()
+ * TODO: [ ]  nullとの等価性比較
+ * TODO: [ ]  他のオブジェクトとの等価性比較
  */
 
 public class MoneyTest {
