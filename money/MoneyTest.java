@@ -8,15 +8,17 @@ import static org.junit.jupiter.api.Assertions.*;
  * TODO: [x] $5 * 2 = $10
  * TODO: [x] amount を privateにする
  * TODO: [x] Dollarの副作用をどうする？
- * TODO: [ ]  Moneyの丸め処理をどうする？
- * TODO: [x]  equals()
- * TODO: [ ]  hashCode()
- * TODO: [ ]  nullとの等価性比較
- * TODO: [ ]  他のオブジェクトとの等価性比較
- * TODO: [x]  5 CHF * 2 = 10 CHF
- * TODO: [ ]  DollarとFrancの重複
- * TODO: [x]  equalsの一般化
- * TODO: [ ]  timesの一般化
+ * TODO: [ ] Moneyの丸め処理をどうする？
+ * TODO: [x] equals()
+ * TODO: [ ] hashCode()
+ * TODO: [ ] nullとの等価性比較
+ * TODO: [ ] 他のオブジェクトとの等価性比較
+ * TODO: [x] 5 CHF * 2 = 10 CHF
+ * TODO: [ ] DollarとFrancの重複
+ * TODO: [x] equalsの一般化
+ * TODO: [ ] timesの一般化
+ * TODO: [ ] FrancとDollarを比較する
+ * TODO: [ ] 通貨の概念
  * TODO: [ ]
  */
 
@@ -34,6 +36,7 @@ public class MoneyTest {
     assertFalse(new Dollar(5).equals(new Dollar(6)));
     assertTrue(new Franc(5).equals(new Franc(5)));
     assertFalse(new Franc(5).equals(new Franc(6)));
+    assertFalse(new Franc(5).equals(new Dollar(5)));
   }
   @Test
   public void testFrancMultiplication(){
