@@ -15,7 +15,7 @@ import static org.junit.jupiter.api.Assertions.*;
  * TODO: [ ]  他のオブジェクトとの等価性比較
  * TODO: [x]  5 CHF * 2 = 10 CHF
  * TODO: [ ]  DollarとFrancの重複
- * TODO: [ ]  equalsの一般化
+ * TODO: [x]  equalsの一般化
  * TODO: [ ]  timesの一般化
  * TODO: [ ]
  */
@@ -32,6 +32,8 @@ public class MoneyTest {
   public void testEquality() {
     assertTrue(new Dollar(5).equals(new Dollar(5)));
     assertFalse(new Dollar(5).equals(new Dollar(6)));
+    assertTrue(new Franc(5).equals(new Franc(5)));
+    assertFalse(new Franc(5).equals(new Franc(6)));
   }
   @Test
   public void testFrancMultiplication(){
