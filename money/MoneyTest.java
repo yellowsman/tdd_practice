@@ -16,9 +16,9 @@ import static org.junit.jupiter.api.Assertions.*;
  * TODO: [x] 5 CHF * 2 = 10 CHF
  * TODO: [ ] DollarとFrancの重複
  * TODO: [x] equalsの一般化
- * TODO: [ ] timesの一般化
+ * TODO: [x] timesの一般化
  * TODO: [x] FrancとDollarを比較する
- * TODO: [ ] 通貨の概念
+ * TODO: [x] 通貨の概念
  * TODO: [ ]
  */
 
@@ -48,5 +48,10 @@ public class MoneyTest {
   public void testCurrency() {
     assertEquals("USD", Money.dollar(1).currency());
     assertEquals("CHF", Money.franc(1).currency());
+  }
+  @Test
+  public void testDiffenrentClassEquality() {
+    assertTrue(new Money(10, "CHF").equals(new Franc(10, "CHF")));
+
   }
 }
