@@ -14,11 +14,12 @@ import static org.junit.jupiter.api.Assertions.*;
  * TODO: [ ] nullとの等価性比較
  * TODO: [ ] 他のオブジェクトとの等価性比較
  * TODO: [x] 5 CHF * 2 = 10 CHF
- * TODO: [ ] DollarとFrancの重複
+ * TODO: [x] DollarとFrancの重複
  * TODO: [x] equalsの一般化
  * TODO: [x] timesの一般化
  * TODO: [x] FrancとDollarを比較する
  * TODO: [x] 通貨の概念
+ * TODO: [x] testFrancMutiplicationを削除する？
  * TODO: [ ]
  */
 
@@ -34,24 +35,11 @@ public class MoneyTest {
   public void testEquality() {
     assertTrue(Money.dollar(5).equals(Money.dollar(5)));
     assertFalse(Money.dollar(5).equals(Money.dollar(6)));
-    assertTrue(Money.franc(5).equals(Money.franc(5)));
-    assertFalse(Money.franc(5).equals(Money.franc(6)));
     assertFalse(Money.franc(5).equals(Money.dollar(5)));
-  }
-  @Test
-  public void testFrancMultiplication(){
-    Money five = Money.franc(5);
-    assertEquals(Money.franc(10), five.times(2));
-    assertEquals(Money.franc(15), five.times(3));
   }
   @Test
   public void testCurrency() {
     assertEquals("USD", Money.dollar(1).currency());
     assertEquals("CHF", Money.franc(1).currency());
-  }
-  @Test
-  public void testDiffenrentClassEquality() {
-    assertTrue(new Money(10, "CHF").equals(new Franc(10, "CHF")));
-
   }
 }
