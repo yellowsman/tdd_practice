@@ -4,12 +4,14 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 /**
- * TODO: [ ] $5 + 10 CHF = $10 (レートが2:1の場合)
+ * TODO: [x] $5 + 10 CHF = $10 (レートが2:1の場合)
  * TODO: [x] $5 + $5 = $10
  * TODO: [ ] $5 + $5 がMoneyを返す
  * TODO: [x] Bank.reduce(Money)
  * TODO: [x] Moneyを変換して換算を行う
  * TODO: [x] Reduce(Bank, String)
+ * TODO: [ ] Sum.plus
+ * TODO: [ ] Expression.times
  * TODO: [ ] Moneyの丸め処理をどうする？
  * TODO: [ ] hashCode()
  * TODO: [ ] nullとの等価性比較
@@ -75,5 +77,14 @@ public class MoneyTest {
   @Test
   public void testIdentityRate() {
     assertEquals(1, new Bank().rate("USD", "USD"));
+  }
+  @Test
+  public void testMixedAddition() {
+    Expression fiveBucks = Money.dollar(5);
+    Expression tenFrancs = Money.franc(10);
+    Bank bank = new Bank();
+    bank.addRate("CHF", "USD", 2);
+    Money result = bank.reduce(fiveBucks.plus(tenFrancs), "USD");
+    assertEquals(Money.dollar(10), result);
   }
 }
